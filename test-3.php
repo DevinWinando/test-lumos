@@ -22,15 +22,7 @@ class LRUCache
 
     public function put($key, $value)
     {
-        if (array_key_exists($key, $this->cache)) {
-            $this->cache[$key] = $value;
-        } else {
-            if (count($this->cache) >= $this->capacity) {
-                array_shift($this->cache);
-            }
-
-            $this->cache[$key] = $value;
-        }
+        $this->cache[$key] = $value;
 
         return null;
     }
